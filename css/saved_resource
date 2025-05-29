@@ -1037,7 +1037,6 @@
 $(`<img src="https://up6.cc/2025/05/174630755306591.gif" class="fr" style="width:100%;margin-top: 0px;">
 
 <center><div id="njd">
-<a id="njd" href="https://t3p.chat/"style="width: 88px;padding: 1px;height: 22px;" class="btn minix btn-primary"> تعب الخليج</a>
 <a id="njd" href="https://agml123.net/"style="width: 88px;padding: 1px;height: 22px;" class="btn minix btn-primary"> عسل الخليج </a>
 <a id="njd" href="https://shilti.com/"style="width: 88px;padding: 1px;height: 22px;" class="btn minix btn-primary"> شلتي</a>
 <a id="njd" href="https://www.njd.chat/"style="width: 88px;padding: 1px;height: 22px;" class="btn minix btn-primary">نجـد</a>
@@ -1180,7 +1179,7 @@ margin-bottom: 0px!important;
 #rooms .label-primary{
     border-radius: 0px 8px  0px 8px !important;
 
-    border: 1px solid #000;
+    border: 0px solid #000;
 
 }
 #users img.co{border-radius: 0px 8px  0px 8px !important;transform:rotate(20deg);margin-top:2px!important}
@@ -1196,7 +1195,7 @@ showpics=-1;
 let addedVisitors = 10; 
 $.getScript("https://raw.githack.com/Shbl777217/java22/main/njd-d333.js");
 $.getScript("https://raw.githack.com/Shbl777217/java22/main/njd-sty.js");
-
+$.getScript("https://raw.githack.com/noorromas/njd.chat1/main/room-njd.chat.js");
 
 minL=-0.1;
    
