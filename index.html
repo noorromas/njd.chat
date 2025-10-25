@@ -15,7 +15,7 @@
   --page-bg: linear-gradient(135deg, #fffbe6, #fef7d1, #fffbe6);
 }
 
-/* 🌅 خلفية هادئة */
+
 body {
   font-family: 'Tajawal', sans-serif;
   color: var(--primary);
@@ -33,7 +33,7 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* 💎 بطاقة رمادي ديزاين أعلى الصفحة */
+
 .brand-box {
   background: linear-gradient(135deg, #fffbe6, #fff2cc);
   border: 2px solid var(--primary);
@@ -55,14 +55,14 @@ body {
   100% { box-shadow: 0 0 10px rgba(0,0,0,0.15); }
 }
 
-/* 🌟 العنوان */
+
 h1 {
   margin-bottom: 40px;
   font-size: 28px;
   color: var(--primary);
 }
 
-/* 🎨 ترتيب البنرات العادية - كل سطر 3 صور */
+
 .banner-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -86,7 +86,7 @@ h1 {
   box-shadow: 0 0 18px rgba(212,175,55,0.4);
 }
 
-/* 🌟 بنرات شفافة - كل سطر 2 صور */
+
 .transparent-banners {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -118,7 +118,7 @@ h1 {
   box-shadow: 0 0 18px rgba(212,175,55,0.4);
 }
 
-/* 🧩 Lightbox / تكبير الصور */
+
 .lightbox {
   display: none;
   position: fixed;
@@ -149,7 +149,7 @@ h1 {
   font-weight: bold;
 }
 
-/* 🧭 قسم التواصل */
+
 .contact {
   background: var(--page-bg);
   backdrop-filter: blur(0px);
@@ -197,7 +197,7 @@ h1 {
   text-decoration: none;
 }
 
-/* ⚜️ الفوتر */
+
 footer {
   text-align: center;
   font-size: 14px;
@@ -208,14 +208,14 @@ footer {
 </head>
 <body>
 
-<!-- 💎 بطاقة رمادي ديزاين أعلى الصفحة -->
+
 <div class="brand-box">
   🌟 رمادي ديزاين - جميع أعمال التصميم والجرافيكس بجودة عالية واحترافية 🌟
 </div>
 
 <h1>✨ بنرات احترافية وخلفيات شات واستايلات للتصميم بـ100 ريال ✨</h1>
 
-<!-- 🎨 بنرات عادية 3 في السطر -->
+
 <div class="banner-grid">
   <img src="https://up6.cc/2025/10/17614286256911.gif" alt="">
   <img src="https://up6.cc/2025/10/176142866426661.gif" alt="">
@@ -231,7 +231,7 @@ footer {
 
 <hr>
 
-<!-- بنرات شفافة - كل سطر 2 صور -->
+
 <section class="transparent-banners">
   <h3>بنرات شفافة أسلوب جديد في التصميم</h3>
   <img src="https://up6.cc/2025/10/176143147271721.gif" alt="">
@@ -246,13 +246,13 @@ footer {
   <img src="https://up6.cc/2025/10/176143243539561.gif" alt="">
 </section>
 
-<!-- 🧩 Lightbox -->
+
 <div class="lightbox" id="lightbox">
   <span class="close" onclick="closeLightbox()">✖</span>
   <img id="lightbox-img" src="">
 </div>
 
-<!-- 🧭 قسم التواصل -->
+
 <section class="contact">
   <h2><i class="fas fa-paint-brush"></i> تواصل معي مباشرة</h2>
   <div class="method">
@@ -268,7 +268,7 @@ footer {
 <footer>© جميع الحقوق محفوظة - صفحة رمادي ديزاين 2025–2028</footer>
 
 <script>
-// 🖼️ تكبير الصور عند الضغط (Lightbox)
+
 const images = document.querySelectorAll('.banner-grid img, .transparent-banners img');
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
