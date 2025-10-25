@@ -1,139 +1,289 @@
-
 <!DOCTYPE html>
 <html dir="rtl" lang="ar">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>شات نجد | مرحبًا بك</title>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <style>
-    :root{
-      --primary:#ffca08;
-      --accent:#ff6a00;
-      --bg-dark:#0d0d0d;
-      --bg-card:#111;
-      --header-bg:#1b2154;
-      --hero-bg:#0f1841;
-      --text-light:#ffffff;
-      --text-dark:#000000;
-    }
-    *{box-sizing:border-box;margin:0;padding:0;font-family:'Tajawal',sans-serif;}
-    body{background:linear-gradient(180deg,#000,#121212);color:var(--text-light);min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden;}
-    header{background:var(--header-bg);padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
-    .logo{font-size:1.5rem;font-weight:700;color:#e3e8ff;text-shadow:0 0 10px #d0d5ff;}
-    nav a{color:#e8eaff;margin:0 1rem;text-decoration:none;position:relative;font-size:1rem;}
-    nav a::after{content:'';position:absolute;right:0;bottom:-6px;width:0;height:2px;background:#e8eaff;transition:.3s;}
-    nav a:hover::after{width:100%;}
-    .hero{flex:1;text-align:center;padding:5rem 1rem;background:var(--hero-bg);}
-    .hero h1{font-size:2.6rem;margin-bottom:1rem;line-height:1.4;}
-    .hero p{font-size:1.25rem;margin-bottom:2rem;}
-    .btn{background:var(--accent);color:#fff;border:none;padding:.85rem 2.2rem;border-radius:40px;font-size:1.1rem;font-weight:700;cursor:pointer;box-shadow:0 0 15px var(--accent);transition:.3s;}
-    .btn:hover{transform:translateY(-3px);box-shadow:0 0 25px var(--accent);}
-    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;padding:3rem 1rem;background:#000;}
-    .feature-card{background:var(--bg-card);padding:2rem 1.5rem;text-align:center;border-radius:25px;border:1px solid rgba(255,255,255,.06);box-shadow:0 4px 15px rgba(0,0,0,.4);}
-    .feature-card i{font-size:2.4rem;margin-bottom:1rem;color:var(--primary);}
-    .feature-card h3{font-size:1.35rem;margin-bottom:.6rem;}
-    .note-section{padding:3rem 1rem;background:#000;display:flex;justify-content:center;}
-    .note-box{max-width:660px;width:100%;background:rgba(0,0,0,.75);border:1px solid rgba(255,255,255,.08);border-radius:28px;padding:2.5rem;box-shadow:0 0 25px var(--primary);}
-    .note-title{font-size:1.6rem;font-weight:700;color:var(--primary);display:flex;align-items:center;gap:.6rem;margin-bottom:1.3rem;}
-    .note-box p{margin:.85rem 0;line-height:1.9;}
-    .note-box .highlight{color:#ff4d4f;font-weight:700;}
-    .note-box .tel{display:flex;align-items:center;gap:.6rem;margin-top:1.5rem;}
-    footer{background:#000;color:#bbb;padding:1rem;text-align:center;font-size:.9rem;}
-    /* Floating Buttons */
-    #music-toggle{position:fixed;top:20px;left:20px;width:60px;height:60px;border-radius:50%;background:var(--primary);display:flex;justify-content:center;align-items:center;box-shadow:0 0 25px var(--primary);cursor:pointer;z-index:1000;}
-    #music-toggle i{color:#000;font-size:1.7rem;}
-    #color-picker-icon{position:fixed;bottom:20px;left:20px;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#ff9100,#ff3d00);display:flex;justify-content:center;align-items:center;box-shadow:0 0 25px #ff7800;cursor:pointer;z-index:1000;}
-    #color-picker-icon i{color:#9b00ff;font-size:2rem;}
-    #color-picker-panel{position:fixed;bottom:90px;left:20px;width:235px;background:#222;padding:1rem;border-radius:18px;display:none;flex-direction:column;gap:.75rem;box-shadow:0 4px 20px rgba(0,0,0,.45);z-index:1000;}
-    #color-picker-panel h4{text-align:center;font-size:1rem;color:#fff;margin-bottom:.6rem;}
-    .swatches{display:flex;flex-wrap:wrap;gap:.75rem;}
-    .color-swatch{width:40px;height:40px;border-radius:50%;cursor:pointer;border:2px solid #fff;}
-  </style>
+<meta charset="utf-8">
+<title>التواصل للتصاميم الاحترافية</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+:root {
+  --primary: #000;
+  --card-bg: rgba(255,255,255,0.95);
+  --highlight: #d4af37;
+  --page-bg: linear-gradient(135deg, #fffbe6, #fef7d1, #fffbe6);
+}
+
+/* 🌅 خلفية هادئة */
+body {
+  font-family: 'Tajawal', sans-serif;
+  color: var(--primary);
+  padding: 30px;
+  text-align: center;
+  min-height: 100vh;
+  background: var(--page-bg);
+  background-size: 400% 400%;
+  animation: subtleGlow 20s ease infinite;
+}
+
+@keyframes subtleGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 💎 بطاقة رمادي ديزاين أعلى الصفحة */
+.brand-box {
+  background: linear-gradient(135deg, #fffbe6, #fff2cc);
+  border: 2px solid var(--primary);
+  border-radius: 15px;
+  padding: 20px 25px;
+  margin-bottom: 40px;
+  display: inline-block;
+  max-width: 90%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  animation: glow 2.5s ease-in-out infinite alternate;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 10px rgba(0,0,0,0.15); }
+  50% { box-shadow: 0 0 20px rgba(0,0,0,0.25); }
+  100% { box-shadow: 0 0 10px rgba(0,0,0,0.15); }
+}
+
+/* 🌟 العنوان */
+h1 {
+  margin-bottom: 40px;
+  font-size: 28px;
+  color: var(--primary);
+}
+
+/* 🎨 ترتيب البنرات العادية - كل سطر 3 صور */
+.banner-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto 50px;
+}
+
+.banner-grid img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.15);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.banner-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(212,175,55,0.4);
+}
+
+/* 🌟 بنرات شفافة - كل سطر 2 صور */
+.transparent-banners {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.transparent-banners h3 {
+  grid-column: span 2;
+  color: var(--primary);
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.transparent-banners img {
+  width: 500px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.15);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.transparent-banners img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(212,175,55,0.4);
+}
+
+/* 🧩 Lightbox / تكبير الصور */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(255,255,255,0.3);
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* 🧭 قسم التواصل */
+.contact {
+  background: var(--page-bg);
+  backdrop-filter: blur(0px);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 500px;
+  margin: 60px auto 20px;
+  text-align: center;
+  border: 2px solid var(--primary);
+}
+
+.contact h2 {
+  margin-bottom: 25px;
+  font-size: 22px;
+  color: var(--primary);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding-bottom: 12px;
+}
+
+.contact .method {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--page-bg);
+  padding: 12px 18px;
+  border-radius: 12px;
+  margin: 12px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact .method:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+}
+
+.contact .method i {
+  font-size: 24px;
+  color: var(--primary);
+}
+
+.contact .method span a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ⚜️ الفوتر */
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: var(--primary);
+  margin-top: 30px;
+}
+</style>
 </head>
 <body>
-<header>
-  <div class="logo">شات نجد</div>
-  <nav>
-    <a href="#features">المميزات</a>
-    <a href="#note">ملاحظة</a>
-  </nav>
-</header>
-<section class="hero">
-  <h1>مرحباً بكم في شات نجد</h1>
-  <p>تجربة دردشة مختلفة كلياً، بلمسة رمادي ديزاين ✨</p>
-  <button class="btn" onclick="window.location.href='https://www.njd.chat/'">ادخل الآن</button>
+
+<!-- 💎 بطاقة رمادي ديزاين أعلى الصفحة -->
+<div class="brand-box">
+  🌟 رمادي ديزاين - جميع أعمال التصميم والجرافيكس بجودة عالية واحترافية 🌟
+</div>
+
+<h1>✨ بنرات احترافية وخلفيات شات واستايلات للتصميم بـ100 ريال ✨</h1>
+
+<!-- 🎨 بنرات عادية 3 في السطر -->
+<div class="banner-grid">
+  <img src="https://up6.cc/2025/10/17614286256911.gif" alt="">
+  <img src="https://up6.cc/2025/10/176142866426661.gif" alt="">
+  <img src="https://up6.cc/2025/07/175243974881511.gif" alt="">
+  <img src="https://up6.cc/2025/08/175444316577691.gif" alt="">
+  <img src="https://up6.cc/2025/08/175886214626621.gif" alt="">
+  <img src="https://up6.cc/2025/10/176142869295441.gif" alt="">
+  <img src="https://up6.cc/2025/10/176142890275251.gif" alt="">
+  <img src="https://up6.cc/2025/10/176142918417981.gif" alt="">
+  <img src="https://up6.cc/2025/10/1761429440011.gif" alt="">
+  <img src="https://up6.cc/2025/10/17614295447421.gif" alt="">
+</div>
+
+<hr>
+
+<!-- بنرات شفافة - كل سطر 2 صور -->
+<section class="transparent-banners">
+  <h3>بنرات شفافة أسلوب جديد في التصميم</h3>
+  <img src="https://up6.cc/2025/10/176143147271721.gif" alt="">
+  <img src="https://up6.cc/2025/10/176143151052331.gif" alt="">
+  <img src="https://up6.cc/2025/10/176143157818961.gif" alt="">
+  <img src="https://up6.cc/2025/10/176143168289571.gif" alt="">
+  <img src="https://up6.cc/2025/10/176143172747141.gif" alt="">
+  <img src="https://up6.cc/2025/10/176143177118591.gif" alt="">
+  <img src="https://up6.cc/2025/10/176143207407171.gif" alt="">
+  <img src="https://up6.cc/2025/10/176143225464781.gif" alt="">
+  <img src="https://up6.cc/2025/10/176143232742871.gif" alt="">
+  <img src="https://up6.cc/2025/10/176143243539561.gif" alt="">
 </section>
-<section id="features" class="features">
-  <div class="feature-card"><i class="fa-solid fa-crown"></i><h3>إدارة متكاملة</h3><p>لوحة تحكم متطورة لمدراء الشات.</p></div>
-  <div class="feature-card"><i class="fa-solid fa-gem"></i><h3>اشتراكات مميزة</h3><p>خطط تناسب الجميع مع مزايا فريدة.</p></div>
-  <div class="feature-card"><i class="fa-solid fa-shield-halved"></i><h3>أمان عالي</h3><p>تصفح وحماية بياناتك بأحدث التقنيات.</p></div>
-  <div class="feature-card"><i class="fa-solid fa-brush"></i><h3>تخصيص الألوان</h3><p>اختر ألوان غرفتك لتناسب ذوقك.</p></div>
-</section>
-<section id="note" class="note-section">
-  <div class="note-box">
-    <div class="note-title"><i class="fa-solid fa-circle-exclamation"></i> ملاحظة هامة</div>
-    <p>إشتراك البنرات (تصميم + تركيب): <strong>100 ريال / شهرين</strong></p>
-    <p>الغرف الخاصة: <strong>100 ريال / شهرين</strong></p>
-    <p>تصميم استايل روم احترافي + الداخلي: <strong>250 ريال</strong></p>
-    <p class="highlight"><i class="fa-solid fa-bullhorn"></i> عزيزي المشترك: لن يتم ارجاع المبلغ بعد استلام السوبر.</p>
-    <p class="tel"><i class="fa-solid fa-phone"></i> صاحب الموقع: ( سعود الرويلي - ريم العمودي ) - إدارة الشات ( N ) - رمادي ديزاين (مصمم الشات)</p>
+
+<!-- 🧩 Lightbox -->
+<div class="lightbox" id="lightbox">
+  <span class="close" onclick="closeLightbox()">✖</span>
+  <img id="lightbox-img" src="">
+</div>
+
+<!-- 🧭 قسم التواصل -->
+<section class="contact">
+  <h2><i class="fas fa-paint-brush"></i> تواصل معي مباشرة</h2>
+  <div class="method">
+    <i class="fab fa-whatsapp"></i>
+    <span>واتس أب: <a href="https://wa.me/967778436340">+967 778 436 340</a></span>
+  </div>
+  <div class="method">
+    <i class="fab fa-snapchat-ghost"></i>
+    <span>سناب شات: <a href="https://www.snapchat.com/add/noorromas">noorromas</a></span>
   </div>
 </section>
-<footer>
-  حقوق شات نجد © 2025-2028 | مصمم ومبرمج الموقع: رمادي ديزاين | 
-</footer>
 
-<!-- Floating Controls -->
-<div id="music-toggle" title="تشغيل / إيقاف الموسيقى">
-  <i class="fa-solid fa-music"></i>
-</div>
-<audio id="bg-music" loop>
-  <source src="https://www.matb3aa.com/music/Abeer-Nehme/Men.Baadak-Abeer.Nehme-MaTb3aa.Com.mp3" type="audio/mpeg">
-</audio>
-
-<div id="color-picker-icon" title="اختر لونك">
-  <i class="fa-solid fa-heart"></i>
-</div>
-<div id="color-picker-panel">
-  <h4>اختر لون الخلفية</h4>
-  <div class="swatches">
-    <div class="color-swatch" style="background:#ffca08" data-color="#ffca08"></div>
-    <div class="color-swatch" style="background:#ff6a00" data-color="#ff6a00"></div>
-    <div class="color-swatch" style="background:#009688" data-color="#009688"></div>
-    <div class="color-swatch" style="background:#3f51b5" data-color="#3f51b5"></div>
-    <div class="color-swatch" style="background:#9c27b0" data-color="#9c27b0"></div>
-    <div class="color-swatch" style="background:#795548" data-color="#795548"></div>
-    <div class="color-swatch" style="background:#607d8b" data-color="#607d8b"></div>
-    <div class="color-swatch" style="background:#ff1744" data-color="#ff1744"></div>
-  </div>
-</div>
+<footer>© جميع الحقوق محفوظة - صفحة رمادي ديزاين 2025–2028</footer>
 
 <script>
-  // Music Toggle
-  const music=document.getElementById('bg-music');
-  const toggle=document.getElementById('music-toggle');
-  toggle.onclick=function(){
-    if(music.paused){
-      music.play();
-      toggle.style.boxShadow='0 0 25px var(--primary)';
-    }else{
-      music.pause();
-      toggle.style.boxShadow='none';
-    }
-  };
-  // Color Picker
-  document.getElementById('color-picker-icon').onclick=function(){
-    const panel=document.getElementById('color-picker-panel');
-    panel.style.display=(panel.style.display==='flex')?'none':'flex';
-    panel.style.flexDirection='column';
-  };
-  document.querySelectorAll('.color-swatch').forEach(function(swatch){
-    swatch.onclick=function(){
-      document.body.style.background=swatch.dataset.color;
-    };
+// 🖼️ تكبير الصور عند الضغط (Lightbox)
+const images = document.querySelectorAll('.banner-grid img, .transparent-banners img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+
+images.forEach(img => {
+  img.addEventListener('click', () => {
+    lightbox.style.display = 'flex';
+    lightboxImg.src = img.src;
   });
+});
+
+function closeLightbox() {
+  lightbox.style.display = 'none';
+}
 </script>
+
 </body>
 </html>
